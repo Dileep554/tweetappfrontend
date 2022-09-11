@@ -1,0 +1,76 @@
+<mat-toolbar class="mat-elevation-z8">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">
+        menu
+    </mat-icon>
+    <mat-icon *ngIf="sidenav.opened">
+        close
+    </mat-icon>
+</button>
+  <!-- <img src="assets\TweetMsg.png"/> -->
+  <div class="row">
+    <div class="column">
+      <div class="icon-text">
+        <button mat-button class="menu-button" routerLink="/home">
+         
+          <img class="logo" src="https://img.icons8.com/fluency/48/000000/butterfly-side-view.png"/>
+          <span class="name">Tweet App</span>
+        </button>
+      </div>
+    </div>
+    <div class="column" style="display: flex; justify-content: flex-end">
+
+      <div class="icon-text" style="display: flex; justify-content: flex-end">
+        <button mat-button class="menu-button" >
+          <mat-icon>chat</mat-icon>
+          <span class="name"><a routerLink="tweets/all" style=" color: #000000;">Tweets</a></span>
+        </button>
+      </div>
+    </div>
+    <div class="column" style="display: flex; justify-content: flex-end">
+      <div class="icon-text" style="display: flex; justify-content: flex-end">
+        <button mat-button class="menu-button">
+          <mat-icon>supervisor_account</mat-icon>
+          <span class="name"><a routerLink="user-list" style=" color: #000000;">Users</a></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav  #sidenav="matSidenav"  class="mat-elevation-z8" >
+    <img class="avatar mat-elevation-z8" src="https://img.icons8.com/plumpy/96/000000/test-account.png" />
+    <h4 class="name">{{currentUser.username}}</h4>
+    <mat-divider></mat-divider>
+    <button mat-button class="menu-button">
+      <mat-icon>person</mat-icon>
+      <span class="name">{{currentUser.firstName}},{{currentUser.lastName}}</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>phone</mat-icon>
+      <span class="name">+91 {{currentUser.contactNumber}}</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>email</mat-icon>
+      <span class="name">{{currentUser.email}}</span>
+    </button>
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button">
+      <mat-icon>https</mat-icon>
+      <span>
+        <a routerLink="passwordReset/{{currentUser.username}}">Reset Password</a></span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>logout</mat-icon>
+      <span>
+        <a routerLink="logout" (click)="doLogOut()" aria-hidden="true">Logout</a></span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+  <mat-sidenav-container>

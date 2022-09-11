@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Edit Tweet</h2>
+
+<mat-dialog-content [formGroup]="editTweetForm">
+  
+    <mat-form-field>
+        <textarea matInput
+                placeholder="{{data.tweetName}}"
+               formControlName="tweetBody"></textarea>
+
+    </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button"(click)="onCloseClick()">Close</button>
+    <button class="mat-raised-button mat-primary"(click)="save()">Save</button>
+</mat-dialog-actions>

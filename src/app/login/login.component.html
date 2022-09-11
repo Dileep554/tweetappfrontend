@@ -1,0 +1,198 @@
+<!-- <div class="col-md-4 offset-md-4 mt-5">
+  <div class="card">
+    <h4 class="card-header">Login</h4> 
+    <div class="card-body">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" formControlName="userName" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" />
+          <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+            <div *ngIf="f.userName.errors.required">Username is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" formControlName="password" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+          </div>
+        </div>
+        <div *ngIf="invalid" class="text-danger">
+          <p>Invalid Credentials:( Please enter correct Username and Password</p>
+        </div>
+        <div class="form-group">
+          <table col='2'>
+            <th>
+              <button [disabled]="loading" class="btn btn-outline-primary">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Login
+              </button>
+            </th>
+            <th>
+              <pre>  </pre>
+            </th>
+            <th>
+              <span>Not yet Registered?<a routerLink="register">Register Here</a></span>
+            </th>
+          </table>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div> -->
+
+<!-- reset password -->
+<!-- <div class="modal fade" id="resetPasswordModal">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Reset Password</h5>
+        <button type="button" class="close" data-dismiss="modal"></button>
+      </div>
+      <div *ngIf="!passwordResetComplete">
+        <form [formGroup]="resetPasswordForm" (ngSubmit)="resetPasswordSubmit()">
+          <div class="modal-body">
+            <input type="text" placeholder="Username" class="w-100" formControlName="username" [ngClass]="{
+                  'is-invalid':
+                    resetSubmitted && resetPasswordForm.controls.username.errors
+                }" />
+            <div *ngIf="
+                  resetSubmitted && resetPasswordForm.controls.username.errors
+                " class="invalid-feedback">
+              <div *ngIf="resetPasswordForm.controls.username.errors.required">
+                Username is required
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="hideResetPasswordModal()">
+              Close
+            </button>
+            <button type="submit" class="btn btn-primary">
+              Reset Password
+            </button>
+          </div>
+        </form>
+      </div>
+      <div *ngIf="passwordResetComplete">
+        <div *ngIf="
+              resetPasswordValue !== null || resetPasswordValue !== undefined
+            ">
+          Password reset successfully. Please login with new password:
+          {{ resetPasswordValue }}
+        </div>
+        <div *ngIf="
+              resetPasswordValue === null || resetPasswordValue === undefined
+            ">
+          Password could not be reset. Please try again and ensure you are
+          typing the correct username.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="hideResetPasswordModal()">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="contact-container">
+  <div class="right">
+    <h1 class="title">Login Into Account</h1>
+    <img class="logo" src="https://img.icons8.com/fluency/48/000000/butterfly-side-view.png" alt="">
+    <div class="form-container">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="username">
+          <input type="text" formControlName="userName" class="user-input" placeholder="Username"
+            [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" />
+          <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+            <div *ngIf="f.userName.errors.required">Username is required</div>
+          </div>
+        </div>
+        <div class="password">
+          <input type="password" formControlName="password" class="pass-input" placeholder="Password"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+          </div>
+        </div>
+        <div *ngIf="invalid" class="text-danger">
+          <p>Invalid Credentials:( Please enter correct Username and Password</p>
+        </div>
+        <button type="submit">Login</button>
+        <a routerLink="register">Create an Account</a>
+      </form>
+    </div>
+  </div>
+</div> -->
+
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+  <div class="card card0 border-0">
+    <div class="row d-flex">
+      <div class="col-lg-5">
+        <div class="card1 pb-6">
+          <div class="row">
+            <img src="https://img.icons8.com/fluency/48/000000/butterfly-side-view.png" class="logo">
+          </div>
+          <div class="row px-3 justify-content-center mt-4 mb-5 border-line">
+            <img src="../../assets/tweet-splash.jpg" class="image">
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card2 card border-0 px-4 py-5">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="row mb-4 px-3">
+              <h1 class="mb-0 mr-4 mt-2">Welcome to Tweet APP</h1>
+            </div>
+            <div class="row px-3 mb-4">
+              <div class="line"></div>
+              <small class="or text-center">Login</small>
+              <div class="line"></div>
+            </div>
+            <div class="row px-3">
+              <input type="text" formControlName="userName" class="user-input" placeholder="Username"
+                [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" />
+              <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+                <div *ngIf="f.userName.errors.required">Username is required</div>
+              </div>
+            </div>
+            <div class="row px-3">
+              <input type="password" formControlName="password" class="pass-input" placeholder="Password"
+                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+              <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+              </div>
+            </div>
+            <!-- <div class="row px-3 mb-4">
+                      <div class="custom-control custom-checkbox custom-control-inline">
+                          <input id="chk1" type="checkbox" name="chk" class="custom-control-input"> 
+                          <label for="chk1" class="custom-control-label text-sm">Remember me</label>
+                      </div>
+                      <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a>
+                  </div> -->
+                  <div *ngIf="invalid" class="text-danger">
+                    <p>Invalid Credentials:( Please enter correct Username and Password</p>
+                  </div>
+            <div class="row mb-3 px-3">
+              <button type="submit" class="btn btn-blue text-center">Login</button>
+            </div>
+            <div class="row mb-4 px-3">
+              <small class="font-weight-bold">Don't have an account? <a class="text-info"
+                  routerLink="register">Register</a></small>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="bg-blue py-4">
+      <div class="row px-3">
+        <small class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2022. All rights reserved.</small>
+      </div>
+    </div>
+  </div>
+</div>
